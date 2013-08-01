@@ -1,0 +1,4 @@
+#!/bin/bash
+
+runtime_dir=${OPENSHIFT_HOMEDIR}app-root/runtime/
+source ${runtime_dir}repo/.openshift/action_hooks/pre_start_jbossas
