@@ -17,13 +17,13 @@ If you'd like to install it manually, follow [these directions](#manual-installa
 
 1. Create JBoss AS applications:
 
-        rhc app create -t jbossas-7 -a mygaeapp
+        rhc app create mygaeapp jbossas-7
 
 1. Remove JBossAS default sample application
 
         cd mygaeapp
         git rm -r src/main/webapp/*
-        git commit -m"Sample app removed."
+        git commit -m "Removing template app"
     
 1. Use files from this github repo to add CapeDwarf modules to JBoss AS.  
 Avoiding conflicts specify git options to prefer this repo content. 
