@@ -6,13 +6,13 @@ Follow this instructions to run Google AppEngine applications on OpenShift PaaS,
 
 <!-- available soon 
 TODO: check URL
-The easiest way to install this application is to use the [OpenShift Instant Application](https://openshift.redhat.com/app/console/application_types/capedwarf).
+The easiest way to install this application is to use the [OpenShift Instant Application](https://openshift.redhat.com/app/console/application_types).
 If you'd like to install it manually, follow [these directions](#manual-installation).
 -->
 ## Manual Installation ##
 
-1. [Register](https://openshift.redhat.com/app/account/new) for OpenShift
-1. Follow the [instructions](https://openshift.redhat.com/app/getting_started) to install client tools (step one)
+1. [Register](https://www.openshift.com/app/account/new) for OpenShift
+1. Follow the [instructions](https://www.openshift.com/get-started) to install client tools (step one)
 1. Create a domain (step two on the link above)
 
 1. Create JBoss AS applications:
