@@ -13,7 +13,7 @@ function is_up_to_date() {
 }
 
 function set_upstream_version() {
-	upstream_version_file=https://raw.github.com/${git_repo}/${git_tag}/version.ini
+	upstream_version_file=https://raw.githubusercontent.com/${git_repo}/${git_tag}/version.ini
 
 	#set capedwarf_upstream_version & as_required
 	source /dev/stdin <<< "$(curl -L -s ${upstream_version_file})"
