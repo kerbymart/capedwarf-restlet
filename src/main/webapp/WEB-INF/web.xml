@@ -6,14 +6,29 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
 
-         <servlet>
-                  <servlet-name>health</servlet-name>
-                  <jsp-file>/health.jsp</jsp-file>
-         </servlet>
-         <servlet-mapping>
-                  <servlet-name>health</servlet-name>
-                  <url-pattern>/health</url-pattern>
-         </servlet-mapping>
+         <!--<servlet>-->
+                  <!--<servlet-name>health</servlet-name>-->
+                  <!--<jsp-file>/health.jsp</jsp-file>-->
+         <!--</servlet>-->
+         <!--<servlet-mapping>-->
+                  <!--<servlet-name>health</servlet-name>-->
+                  <!--<url-pattern>/health</url-pattern>-->
+         <!--</servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>RestletServlet</servlet-name>
+        <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+        <init-param>
+            <param-name>org.restlet.application</param-name>
+            <param-value>org.example.FirstStepsApplication</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- Catch all requests -->
+    <servlet-mapping>
+        <servlet-name>RestletServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
          
 </web-app>
 
