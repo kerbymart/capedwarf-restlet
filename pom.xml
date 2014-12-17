@@ -57,13 +57,11 @@
           <version>${version.gwt}</version>
           <scope>provided</scope>
       </dependency>
-      <!--
       <dependency>
         <groupId>com.google.gwt</groupId>
         <artifactId>gwt-codeserver</artifactId>
         <version>${version.gwt}</version>
       </dependency>
-      -->
       <!-- Errai Dependencies -->
       <dependency>
           <groupId>org.jboss.errai</groupId>
