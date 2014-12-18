@@ -151,7 +151,7 @@
                 </executions>
                 <configuration>
                     <modules>
-                        <!-- Marketplace gwt module inherits Core gwt module therefore both will be gwt:compiled -->
+                        <!-- gwt module inherits Core gwt module therefore both will be gwt:compiled -->
                         <module>org.example.App</module>
                     </modules>
                     <logLevel>DEBUG</logLevel>

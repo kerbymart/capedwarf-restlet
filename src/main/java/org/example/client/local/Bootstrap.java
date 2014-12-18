@@ -26,10 +26,6 @@ public class Bootstrap extends Composite
     @Inject
     Navigation navigation;
 
-    @Inject
-    @DataField
-    Label text;
-    
     @Inject @DataField
     private SimplePanel content;
     
@@ -37,7 +33,6 @@ public class Bootstrap extends Composite
     public void buildUI()
     {
     	content.add(navigation.getContentPanel());
-        text.setText("This text is from Errai/GWT!");
         RootPanel.get("rootPanel").add(this);
     }
 
