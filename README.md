@@ -1,6 +1,6 @@
-# Running CapeDwarf on OpenShift
+# Running Errai with CapeDwarf on OpenShift
 
-Quickstart CapeDwarf application for OpenShift.
+Quickstart Errai with CapeDwarf application for OpenShift.
 
 Follow this instructions to run Google AppEngine applications on OpenShift PaaS, using [CapeDwarf](http://www.jboss.org/capedwarf).
 
