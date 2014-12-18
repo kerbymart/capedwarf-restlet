@@ -10,6 +10,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
+    <version.gwt>2.5.1</version.gwt>
+    <version.errai>3.0.0.Final</version.errai>
     <gae.version>1.8.8</gae.version>
     <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}</gae.home>
     <gae.application.version>test</gae.application.version>
@@ -40,6 +42,51 @@
           <artifactId>appengine-testing</artifactId>
           <version>${gae.version}</version>
           <scope>test</scope>
+      </dependency>
+      <!-- GWT libraries -->
+      <dependency>
+          <!-- this library provides classes required by GWT-RPC servlets on the server -->
+          <groupId>com.google.gwt</groupId>
+          <artifactId>gwt-servlet</artifactId>
+          <version>${version.gwt}</version>
+          <scope>runtime</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.google.gwt</groupId>
+          <artifactId>gwt-user</artifactId>
+          <version>${version.gwt}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-codeserver</artifactId>
+        <version>${version.gwt}</version>
+      </dependency>
+      <!-- Errai Dependencies -->
+      <dependency>
+          <groupId>org.jboss.errai</groupId>
+          <artifactId>errai-jpa-client</artifactId>
+          <version>${version.errai}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.errai</groupId>
+          <artifactId>errai-ui</artifactId>
+          <version>${version.errai}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.errai</groupId>
+          <artifactId>errai-data-binding</artifactId>
+          <version>${version.errai}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.errai</groupId>
+          <artifactId>errai-cdi-client</artifactId>
+          <version>${version.errai}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.errai</groupId>
+          <artifactId>errai-navigation</artifactId>
+          <version>${version.errai}</version>
       </dependency>
       <!-- Restlet -->
       <dependency>
@@ -81,12 +128,44 @@
               <warName>ROOT</warName>
             </configuration>
           </plugin>
+          <plugin>
+              <groupId>com.google.appengine</groupId>
+              <artifactId>appengine-maven-plugin</artifactId>
+              <version>${gae.version}</version>
+              <configuration>
+                  <enableJarClasses>false</enableJarClasses>
+              </configuration>
+          </plugin>
             <plugin>
-                <groupId>com.google.appengine</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>${gae.version}</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${version.gwt}</version>
+                <executions>
+                    <execution>
+                        <!-- gwt:compile happens just before package phase -->
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <enableJarClasses>false</enableJarClasses>
+                    <modules>
+                        <!-- gwt module inherits Core gwt module therefore both will be gwt:compiled -->
+                        <module>org.example.App</module>
+                    </modules>
+                    <logLevel>DEBUG</logLevel>
+                    <!--<logLevel>WARN</logLevel>-->
+                    <runTarget>index.html</runTarget>
+                    <appEngineVersion>${gae.version}</appEngineVersion>
+                    <!-- tell the gwt plugin that the webapp source resides in src/main/webapp -->
+                    <webappDirectory>${webappDirectory}</webappDirectory>
+                    <!-- tell the gwt plugin that dev mode should be run using the webapp that resides in target/${webappDirectory} -->
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <!-- Normally the gwt maven plugin executes dev mode using a builtin jetty server.
+                         This config property instructs the gwt maven plugin to execute dev mode using the
+                         jetty server supplied by the appengine sdk. -->
+                    <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
                 </configuration>
             </plugin>
         </plugins>
