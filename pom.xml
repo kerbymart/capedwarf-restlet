@@ -10,9 +10,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
-    <version.gwt>2.5.1</version.gwt>
-    <version.errai>3.0.0.Final</version.errai>
-    <gae.version>1.8.8</gae.version>
+    <version.gwt>2.7.0</version.gwt>
+    <version.errai>3.1.1.Final</version.errai>
+    <gae.version>1.9.18</gae.version>
     <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}</gae.home>
     <gae.application.version>test</gae.application.version>
   </properties>
