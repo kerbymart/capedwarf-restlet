@@ -4,6 +4,13 @@ Quickstart Errai with CapeDwarf application for OpenShift.
 
 Follow this instructions to run Google AppEngine applications on OpenShift PaaS, using [CapeDwarf](http://www.jboss.org/capedwarf).
 
+To Run:
+-------
+
+Simply execute this command
+
+$mvn pengine:devserver -Popenshift
+
 <!-- available soon 
 TODO: check URL
 The easiest way to install this application is to use the [OpenShift Instant Application](https://openshift.redhat.com/app/console/application_types).
