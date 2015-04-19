@@ -9,7 +9,7 @@ To Run:
 
 Simply execute this command
 
-$mvn pengine:devserver -Popenshift
+$mvn appengine:devserver -Popenshift
 
 <!-- available soon 
 TODO: check URL
