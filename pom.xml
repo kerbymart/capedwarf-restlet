@@ -10,6 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
+    <restlet.version>2.4.0</restlet.version>
     <gae.version>1.9.77</gae.version>
     <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}</gae.home>
     <gae.application.version>test</gae.application.version>
@@ -45,17 +46,17 @@
       <dependency>
           <groupId>org.restlet.gae</groupId>
           <artifactId>org.restlet</artifactId>
-          <version>2.4.0</version>
+          <version>${restlet.version}</version>
       </dependency>
       <dependency>
           <groupId>org.restlet.gae</groupId>
           <artifactId>org.restlet.ext.servlet</artifactId>
-          <version>2.4.0</version>
+          <version>${restlet.version}</version>
       </dependency>
       <dependency>
           <groupId>org.restlet.gae</groupId>
           <artifactId>org.restlet.ext.jackson</artifactId>
-          <version>2.2.0</version>
+          <version>${restlet.version}</version>
       </dependency>
       <dependency>
           <groupId>javax.servlet</groupId>
@@ -99,47 +100,5 @@
             <name>Public online Restlet repository</name>
             <url>https://maven.restlet.talend.com</url>
         </repository>
-        <repository>
-            <id>spring-boot-legacy-mvn-repo</id>
-            <url>https://raw.github.com/appobjects/spring-boot-legacy/mvn-repo/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>http://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>http://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>http://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>http://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
